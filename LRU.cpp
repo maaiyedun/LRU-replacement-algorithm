@@ -28,7 +28,7 @@ int main(){
 		sort(c.begin(),c.end());
 		bool hasrun=false;
 		for(j=0;j<cSize;j++){
-			if(a[j][i]==p[i]){
+			if(a[j][i]==p[i]){ 
 				hit++;
 				hi[i]=1;
 				mp[p[i]]=1;
