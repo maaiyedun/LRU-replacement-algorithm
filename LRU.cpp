@@ -3,25 +3,30 @@
 
 #include <iostream>
 #include <vector>
-#include <algorithm> 
+#include <algorithm>
 #include <map>
-
+#include <string.h>
+#include <fstream>
+#include <sstream>
+#include <math.h>
+#include <stdio.h>
 
 
 using namespace std;
 
 
 int main() {
-	int n, m, i, j, k, hit = 0;
+	int n, m, i, j, k, hit, con = 0;
+	string line;
 	cout << "Enter the cache Size" << endl;
-	cin >> n; 
+	cin >> n;
 
 	ifstream myfile("multi1.trc");
 	while (std::getline(myfile, line)) {
 		++m;
 	}
 		myfile.close();
-	}
+
 
 	vector<int> p(m);
 	vector<int> hi(m);
@@ -30,8 +35,8 @@ int main() {
 	if (Cfile.is_open()) {
 	for (i = 0; i < m; i++) {
 		getline(Cfile, line);
-		 p[i]=line;
-	}		
+		 p[i]=stoi(line);
+		}
 		Cfile.close();
 	}
 
