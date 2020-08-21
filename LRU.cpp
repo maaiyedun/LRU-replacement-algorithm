@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+
 #include <map>
 #include <string.h>
 #include <fstream>
@@ -16,15 +17,26 @@ using namespace std;
 
 
 int main() {
-	int n, m, i, j, k, hit, con = 0;
+	int n= 0;
+	int i= 0;
+	int j= 0;
+	int k= 0;
+	int hit= 0;
+	int con = 0;
+	int m=0;
 	string line;
 	cout << "Enter the cache Size" << endl;
 	cin >> n;
 
+
+
 	ifstream myfile("multi1.trc");
-	while (std::getline(myfile, line)) {
-		++m;
+
+	while (getline(myfile, line)) {
+
+		m++;
 	}
+
 		myfile.close();
 
 
@@ -35,7 +47,11 @@ int main() {
 	if (Cfile.is_open()) {
 	for (i = 0; i < m; i++) {
 		getline(Cfile, line);
-		 p[i]=stoi(line);
+		stringstream geek(line);
+		geek>>con;
+		 //p[i]=stoi(line);
+		 //sscanf(line,"%d",&con);
+		 p[i]=con;
 		}
 		Cfile.close();
 	}
@@ -88,3 +104,4 @@ int main() {
 	cout << "Page Hit " << hit << endl << "Page Fault " << m - hit << endl;
 	return 0;
 }
+
